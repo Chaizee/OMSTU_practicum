@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 #include "lab5_realisation.h"
 
@@ -9,9 +8,10 @@ static int is_prime(int number)
 
     int prime_status = 1;
 
-    for (int digit = 2; digit <= sqrt(number); digit++) {
+    for (int digit = 2; digit * digit <= number; digit++) {
         if (number % digit == 0) {
             prime_status = 0;
+            break;
         }
     }
     
